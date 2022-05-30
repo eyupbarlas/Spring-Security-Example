@@ -33,9 +33,17 @@ public class AppUser implements UserDetails {
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
-    private Boolean locked = false;
-    private Boolean enabled = false;
+    private Boolean locked = false; //? Default value for testing purposes
+    private Boolean enabled = false; //? Default value for testing purposes
 
+    /**
+     * Constructor that doesn't include ID, locked, enabled values.
+     * @param firstName user's firstname
+     * @param lastName user's lastname
+     * @param email user's email address
+     * @param password user's password to login
+     * @param appUserRole user's current role for security
+     */
     public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
         this.firstName = firstName;
         this.lastName = lastName;
